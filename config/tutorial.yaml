@@ -37,6 +37,6 @@ node_lines:
             embedding_model: openai
       modules:
         - module_type: openai_llm
-          llm: gpt-3.5-turbo
+          llm: gpt-4o-mini
           temperature: [ 0.1, 1.0 ]
-          batch: 4
+          batch: 16

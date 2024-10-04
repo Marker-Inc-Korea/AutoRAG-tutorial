@@ -164,3 +164,7 @@ benchmark/resources/
 
 data/**/*.csv
 data/*.csv
+
+parsed_raw/
+chunked_corpus/
+
