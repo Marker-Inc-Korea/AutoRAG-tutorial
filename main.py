@@ -20,7 +20,7 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     if not os.path.exists(project_dir):
         os.makedirs(project_dir)
     evaluator = Evaluator(qa_data_path, corpus_data_path, project_dir=project_dir)
-    evaluator.start_trial(config)
+    evaluator.start_trial(config, skip_validation=True)
 
 
 if __name__ == '__main__':

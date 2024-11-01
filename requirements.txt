@@ -1,4 +1,4 @@
-AutoRAG[parse]>=0.3.2
+AutoRAG[parse]>=0.3.8
 click
 python-dotenv
 spacy

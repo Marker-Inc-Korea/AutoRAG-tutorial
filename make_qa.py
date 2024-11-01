@@ -18,9 +18,9 @@ root_dir = os.path.dirname(os.path.realpath(__file__))
 
 @click.command()
 @click.option("--corpus_path", type=click.Path(exists=True), help="Path to the corpus. Must be parquet file.",
-			  required=True, default=os.path.join(root_dir, "chunked_corpus", "0", "3.parquet"))
+			  required=True, default=os.path.join(root_dir, "chunked_corpus", "3.parquet"))
 @click.option("--raw_path", type=click.Path(exists=True), help="Path to the raw data. Must be parquet file.",
-			  required=True, default=os.path.join(root_dir, "parsed_raw", "0", "5.parquet"))
+			  required=True, default=os.path.join(root_dir, "parsed_raw", "5.parquet"))
 @click.option("--qa_size", type=int, help="Number of QA pairs to generate.", default=4)
 @click.option("--output_path", type=click.Path(), help="Path to save the generated QA pairs. Must be parquet file.",
 			  required=True,
@@ -34,7 +34,7 @@ def main(corpus_path, raw_path, qa_size, output_path, corpus_output_path):
 		if not path.endswith(".parquet"):
 			raise ValueError(f"Path {path} must be a parquet file.")
 
-	llm = OpenAI(model="gpt-4o-2024-08-06")
+	llm = OpenAI(model="gpt-4o-mini-2024-07-18")
 
 	initial_raw = Raw(pd.read_parquet(raw_path, engine="pyarrow"))
 	initial_corpus = Corpus(pd.read_parquet(corpus_path, engine="pyarrow"), initial_raw)

@@ -8,7 +8,7 @@ node_lines:
       modules:
         - module_type: bm25
         - module_type: vectordb
-          embedding_model: openai
+          vectordb: default
         - module_type: hybrid_rrf
         - module_type: hybrid_cc
           normalize_method: [ mm, tmm ]

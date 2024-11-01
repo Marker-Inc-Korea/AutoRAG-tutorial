@@ -10,7 +10,7 @@ root_dir = os.path.dirname(os.path.realpath(__file__))
 
 @click.command()
 @click.option('--raw_path', type=click.Path(exists=True, dir_okay=False, file_okay=True),
-			  default=os.path.join(root_dir, "parsed_raw", "0", "2.parquet"))
+			  default=os.path.join(root_dir, "parsed_raw", "2.parquet"))
 @click.option('--config', type=click.Path(exists=True, dir_okay=False), default=os.path.join(root_dir, "config", "chunk.yaml"))
 @click.option('--project_dir', type=click.Path(dir_okay=True), default=os.path.join(root_dir, "chunked_corpus"))
 def main(raw_path, config, project_dir):
