@@ -19,17 +19,17 @@ To use AutoRAG, you first need to create a RAG evaluation dataset. Follow the st
 1. Check the original documents in `raw_docs`. In this tutorial, we will use three PDF documents.
 2. Run `run_parse.py`. This file allows you to execute parsing methods specified in `config/parse.yaml` and compare the results.
 ```bash
-python make_parse.py 
+python run_parse.py 
 ```
 3. In the `parsed_raw` folder, you will find several parquet files within the trial folder (numbered folders). These are the parsed results. Load them using `pandas` to inspect them directly.
 4. Execute `run_chunk.py` to perform chunking using various methods. You can check the chunking methods in `config/chunk.yaml`. You need to set the raw file at this point.
 ```bash
-python run_chunk.py --raw_path ./parsed_raw/0/2.parquet
+python run_chunk.py --raw_path ./parsed_raw/0.parquet
 ```
 5. After execution, check the `chunked_corpus` folder for the various chunked files created using different chunking methods.
 6. Now, run the `make_qa.py` file. You need to set the raw file used for chunk creation and the chunk file to be used. Choose an appropriate chunk file, and you can generate a QA dataset using other chunk files later. You don't need to generate questions again. Refer to the update_corpus feature explained later.
 ```bash
-python make_qa.py --raw_path ./parsed_raw/0/5.parquet --chunk_path ./chunked_corpus/0/3.parquet --qa_size 5
+python make_qa.py --raw_path ./parsed_raw/0.parquet --corpus_path ./chunked_corpus/0.parquet --qa_size 5
 ```
 7. Check the `generated_qa.parquet` and `generated_corpus.parquet` files created in the `data` folder.
 
