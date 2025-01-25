@@ -2,3 +2,4 @@ AutoRAG[parse]>=0.3.8
 click
 python-dotenv
 spacy
+pycryptodome
